@@ -12,58 +12,134 @@
             body {
                 font-family: 'Chakra Petch', sans-serif;
             }
-    </head>
-    <body>
-        <style>
-            h1 { color: purple; }
         </style>
+    </head>
+
+    <body>
+        
         <div class="container mt-4">
-            <h1> HTML 101 </h1>
-            <form>
-                <div class="row">
-                    <div class="col-sm-12 col-md-4"> 
-                        <label for="fname"> ชื่อ </label>
+            <h1>Workshop #HTML-Form </h1>
+            
+            <form class="form-box">
+                <div class="row mb-2">
+                    <div class="col-6"> 
+                        <label class="fname"> ชื่อ </label>
                     </div>
                     <div class="col">
                         <input class="form-control">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-4"> 
+
+                <div class="row mb-2">
+                    <div class="col-6"> 
                         <label for="fname"> สกุล </label>
                     </div>
                     <div class="col">
                         <input class="form-control">
                     </div>
                 </div>
+
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="dateofbirth"> วัน/เดือน/ปีเกิด </label>
+                    </div>
+                    <div class="col">
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-6"> 
+                        <label for="fname"> อายุ </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-control">
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="email"> เพศ </label>
+                    </div>
+                    <div class="col">
+                        <input type="radio" id="man" name="gender" value="Man">
+                        <label for="man">ชาย</label>
+
+                        <input type="radio" id="woman" name="gender" value="Woman">
+                        <label for="woman">หญิง</label>
+
+                        <input type="radio" id="notprefer" name="gender" value="Notprefer">
+                        <label for="notprefer">ไม่ระบุ</label>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="myfile"> รูป </label>
+                    </div>
+                    <div class="col">
+                <input type="file" class="form-control">
+                    </div>
+                </div>
+
+                <div classs="row mb-2">
+                    <div class="col-6">
+                        <label for="address"> ที่อยู่ </label>
+                    </div>
+                    <div class="col">
+                        <textarea class="form-control" rows="2" cols="20"></textarea><br>
+                </div>
+                
+                
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="favoritecolor"> สีที่ชอบ </label>
+                    </div>
+                    <div class="col">
+                        <select class="form-select">
+                            <option value="red"> แดง </option>
+                            <option value="blue"> น้ำเงิน </option>
+                            <option value="green"> เขียว </option>
+                            <option value="yellow"> เหลือง </option>
+                            <option value="black"> ดำ </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="songgenre"> แนวเพลงที่ชอบ</label>
+                    </div>
+                    <div class="col">
+                        <input type="radio" id="forlife" name="genre" value="forlife">
+                        <label for="forlife"> เพื่อชีวิต </label>
+
+                        <input type="radio" id="country" name="genre" value="country">
+                        <label for="forlife"> ลูกทุ่ง </label>
+
+                        <input type="radio" id="hiphop" name="genre" value="hiphop">
+                        <label for="forlife"> ฮิปฮอป </label>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <input type="checkbox"> ยินยอมให้เก็บข้อมูล
+                    </div>
+                </div>
+
+                <br>
+
+                <div style="text-align: left;">
+                    <input type="reset" value="Reset">
+                </div>
+
+                <div style="text-align: center;">       
+                    <input type="submit" value="Submit">
+                </div>
+
             </form>
         </div>
-        <h1>Welcome to HTML 101</h1>
-        <h1 style ="color:blue;">HTML 101</h1>
-        <h2>This is a subheading</h2>
-        <h3>This is a smaller heading</h3>
-        <hr />
-        <h2>Text Formatting</h2>
-        <hr>
-        <table border="1" width="100%">
-            <thead>
-                <tr>
-                    <th>ลำดับ</th>
-                    <td>ชื่อ</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>1</th>
-                    <td>สมชาย</td>
-                </tr>
-                <tr>
-                    <th>1</th>
-                    <td>สมหญิง</td>
-                </tr>
-            </tbody>
-        </table>
-
-
+        
     </body>
 </html>
