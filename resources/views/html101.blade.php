@@ -1,32 +1,21 @@
-<!-- file: resources/views/html101.blade.php -->
-<!DOCTYPE html>
-<html lang="en">
-<html>
-    <head>
-        <title>HTML 101</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Chakra Petch', sans-serif;
-            }
-        </style>
-    </head>
+@extends('template.dafault')
 
-    <body>
-        
-        <div class="container mt-4">
-            <h1>Workshop #HTML-Form </h1>
-            
+@section('title','Workshop')
+
+@section('content')
             <form class="form-box">
                 <div class="row mb-2">
                     <div class="col-6"> 
                         <label class="fname"> ชื่อ </label>
                     </div>
                     <div class="col">
-                        <input class="form-control">
+                        <input id="fname" class="form-control is-valid">
+                        <div class="valid-feedback">
+                            ถูกต้อง
+                            </div>
+                        <div class="invalid-feedback">
+                            โปรดระบุชื่อ
+                            </div>
                     </div>
                 </div>
 
@@ -130,16 +119,53 @@
 
                 <br>
 
-                <div style="text-align: left;">
-                    <input type="reset" value="Reset">
+                <div class="row mb-2">
+                    <div style="text-align: left;">
+                        <button class="btn btn-secondary" type="reset">Reset</button>
+                    </div>
                 </div>
 
-                <div style="text-align: center;">       
-                    <input type="submit" value="Submit">
+                <div class="col">
+                    <div style="text-align: center;">       
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
                 </div>
 
             </form>
-        </div>
-        
-    </body>
-</html>
+@endsection
+
+@push('scripts')
+    <script>
+        let clickMe = function() {
+            let fname = document.getElementById('fname')
+            // fname.value = "from clickMe"
+            // console.log(fname.value);
+            
+            if(fname.value == "") {
+                fname.classList.remove('is-valid');
+                fname.classList.add('is-invalid');
+            } else {
+                fname.classList.remove('is-invalid');
+                fname.classList.add('is-valid');
+            }
+        }
+
+        let myfunc = (callback) =>{
+            callback("in Callback");
+        }
+
+        callMe = (param) => {
+            console.log(param);
+        }
+
+        myfunc(callMe);
+
+        clickMe();
+
+        let myvar = "1";
+        let myvar2 = 2;
+        myvar = parseInt(myvar);
+
+        console.log(myvar + myvar2 + "\n\n\n\n\n test");
+    </script>
+@endpush
