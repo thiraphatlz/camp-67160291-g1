@@ -18,7 +18,7 @@
 
     <body>
         <div class="container mt-4">
-            <h1>Workshop HTML 101 - Form</h1>
+            <h1>@yield('title')</h1>
                 @yield('content')
         </div>
         @stack('scripts')

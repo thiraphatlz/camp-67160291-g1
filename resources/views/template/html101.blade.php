@@ -1,12 +1,14 @@
 @extends('template.dafault')
 
-@section('title','Workshop HTML 101 - Form')
+@section('title','Workshop Form')
 
 @section('content')
             <form class="form-box">
 
     <div class="row mb-2">
-        <div class="col-6"><label> ชื่อ </label></div>
+        <div class="col-6">
+            <label> ชื่อ </label>
+        </div>
         <div class="col">
             <input id="fname" class="form-control">
             <div class="valid-feedback">ถูกต้อง</div>
@@ -15,7 +17,9 @@
     </div>
 
     <div class="row mb-2">
-        <div class="col-6"><label for="lname"> สกุล </label></div>
+        <div class="col-6">
+            <label for="lname"> สกุล </label>
+        </div>
         <div class="col">
             <input id="lname" class="form-control">
             <div class="valid-feedback">ถูกต้อง</div>
@@ -24,7 +28,9 @@
     </div>
 
     <div class="row mb-2">
-        <div class="col-6"><label for="dateofbirth"> วัน/เดือน/ปีเกิด </label></div>
+        <div class="col-6">
+            <label for="dateofbirth"> วัน/เดือน/ปีเกิด </label>
+        </div>
         <div class="col">
             <input type="date" id="dateofbirth" class="form-control">
             <div class="valid-feedback">ถูกต้อง</div>
@@ -64,7 +70,9 @@
     </div>
 
     <div class="row mb-2">
-        <div class="col-6"><label for="myfile"> รูป </label></div>
+        <div class="col-6">
+            <label for="myfile"> รูป </label>
+        </div>
         <div class="col">
             <input type="file" id="myfile" class="form-control">
             <div class="valid-feedback">ถูกต้อง</div>
@@ -73,7 +81,9 @@
     </div>
 
     <div class="row mb-2">
-        <div class="col-6"><label for="address"> ที่อยู่ </label></div>
+        <div class="col-6">
+            <label for="address"> ที่อยู่ </label>
+        </div>
         <div class="col">
             <textarea id="address" class="form-control" rows="2" cols="20"></textarea>
             <div class="valid-feedback">ถูกต้อง</div>
@@ -82,7 +92,9 @@
     </div>
 
     <div class="row mb-2">
-        <div class="col-6"><label for="favoritecolor"> สีที่ชอบ </label></div>
+        <div class="col-6">
+            <label for="favoritecolor"> สีที่ชอบ </label>
+        </div>
         <div class="col">
             <select id="favoritecolor" class="form-select">
                 <option value="">เลือกสีที่ชอบ</option> 
@@ -97,7 +109,9 @@
     </div>
 
     <div class="row mb-2">
-        <div class="col-6"><label> แนวเพลงที่ชอบ</label></div>
+        <div class="col-6">
+            <label> แนวเพลงที่ชอบ</label>
+        </div>
         <div class="col">
             <input type="radio" id="forlife" name="genre" value="forlife" class="form-check-input"> 
             <label for="forlife"> เพื่อชีวิต </label>
@@ -128,7 +142,7 @@
     </div>
 
     <div style="text-align: center;" class="mt-3">
-        <button class="btn btn-primary" type="button" onclick="clickMe()">Submit</button>
+        <button class="btn btn-success" type="button" onclick="clickMe()">Submit</button>
     </div>
 </form>
 @endsection
@@ -137,8 +151,8 @@
     <script>
         let clickMe = function() {
             
-            // fname.value = "from clickMe"
-            // console.log(fname.value);
+        // fname.value = "from clickMe"
+        // console.log(fname.value);
             
         let fname = document.getElementById('fname');
         let lname = document.getElementById('lname');
@@ -186,12 +200,17 @@
         let genderChecked = document.querySelector('input[name="gender"]:checked');
         let genderElements = document.querySelectorAll('input[name="gender"]');
         if (!genderChecked) {
-            genderElements.forEach(el => { el.classList.remove('is-valid'); el.classList.add('is-invalid'); });
+            genderElements.forEach(el => 
+            { el.classList.remove('is-valid'); 
+                el.classList.add('is-invalid'); 
+            });
         } else {
-            genderElements.forEach(el => { el.classList.remove('is-invalid'); el.classList.add('is-valid'); });
+            genderElements.forEach(el => 
+            { el.classList.remove('is-invalid'); 
+                el.classList.add('is-valid'); 
+            });
         }
 
- 
         if (myfile.value == "") {
             myfile.classList.remove('is-valid');
             myfile.classList.add('is-invalid');
@@ -219,9 +238,15 @@
         let genreChecked = document.querySelector('input[name="genre"]:checked');
         let genreElements = document.querySelectorAll('input[name="genre"]');
         if (!genreChecked) {
-            genreElements.forEach(el => { el.classList.remove('is-valid'); el.classList.add('is-invalid'); });
+            genreElements.forEach(el => 
+            { el.classList.remove('is-valid'); 
+                el.classList.add('is-invalid'); 
+            });
         } else {
-            genreElements.forEach(el => { el.classList.remove('is-invalid'); el.classList.add('is-valid'); });
+            genreElements.forEach(el => 
+            { el.classList.remove('is-invalid'); 
+                el.classList.add('is-valid'); 
+            });
         }
 
         if (!consent.checked) {
