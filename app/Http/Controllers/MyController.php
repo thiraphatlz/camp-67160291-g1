@@ -33,4 +33,24 @@ class MyController extends Controller
         $data['num'] = $req->input('mynumber');
         return view('myview.calculate',$data);
     }
+
+    function html101(Request $req) {
+        return view('template.html101');
+    }
+
+    function result(Request $req) {
+        $data = [
+            'fname' => $req->input('fname'),
+            'lname' => $req->input('lname'),
+            'dateofbirth' => $req->input('dateofbirth'),
+            'age' => $req->input('age'),
+            'gender' => $req->input('gender'),
+            'myfile' => $req->file('myfile'),
+            'address' => $req->input('address'),
+            'favoritecolor' => $req->input('favoritecolor'),
+            'genre' => $req->input('genre'),
+            'consent_check' => $req->input('consent_check'),
+        ];
+        return view('template.html101_view',$data);
+    }
 }
