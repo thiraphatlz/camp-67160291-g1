@@ -1,4 +1,4 @@
-@extends('template.dafault')
+@extends('template.default')
 
 @section('title','ตารางสูตรคูณ');
 
